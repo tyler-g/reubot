@@ -13,6 +13,7 @@
   "license": "MIT",
   "readme": "A bare bones Tessel 2 blinky script.",
   "dependencies": {
+    "dotenv": "^2.0.0",
     "slackbots": "^0.5.1"
   }
 }

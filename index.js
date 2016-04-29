@@ -11,6 +11,8 @@ Under no circumstances ever can you violate any of these provisions without expr
 
 */
 
+require('dotenv').config();
+
 // Import the interface to Tessel hardware
 var tessel = require('tessel');
 
@@ -64,7 +66,7 @@ for (var i = 0; i < reuPins.length; i++) {
 var SlackBot = require('slackbots');
 
 var config = {
-  'token' : 'xoxb-36024497685-5DZJtgkLsSTVbEaCsZrBXbOI',
+  'token' : process.env.SLACK_TOKEN,
   'name'  : 'Reubot',
   'channel' : 'reubot-chat'
 };
