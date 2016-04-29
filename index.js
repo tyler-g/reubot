@@ -65,8 +65,8 @@ for (var i = 0; i < reuPins.length; i++) {
 
 var SlackBot = require('slackbots');
 
+console.log(process.env);
 var config = {
-  'token' : process.env.SLACK_TOKEN,
   'name'  : 'Reubot',
   'channel' : 'reubot-chat'
 };
@@ -76,14 +76,11 @@ var switchLock = false;
 var masterLock = true;
 var buttonLock = true;
 
-
 //all LEDs off
-
 tessel.led[0].off();
 tessel.led[1].off();
 tessel.led[2].off();
 tessel.led[3].off();
-
 
 //bind button events
 for (var i = 0; i < reuButtonsLength; i++) {
@@ -155,7 +152,7 @@ reuButtons[0]['btn'].on('ready', function () {
 
 // create a bot
 var bot = new SlackBot({
-    token: config.token,
+    token: process.env.SLACK_TOKEN,
     name: config.name
 });
 
